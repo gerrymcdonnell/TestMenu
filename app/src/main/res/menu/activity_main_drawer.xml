@@ -13,6 +13,28 @@
                 android:id="@+id/nav_sport"
                 android:icon="@drawable/ic_menu_send"
                 android:title="Sport" />
+
+            <item
+                android:id="@+id/nav_ent"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Entertainment" />
+
+            <item
+                android:id="@+id/nav_business"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Business" />
+
+            <item
+                android:id="@+id/nav_worldnews"
+                android:icon="@drawable/ic_menu_send"
+                android:title="World News" />
+
+            <item
+                android:id="@+id/nav_politics"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Politics" />
+
+
         </menu>
     </item>
 

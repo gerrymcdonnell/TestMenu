@@ -108,17 +108,70 @@ public class MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
+        String url="";
 
         if (id == R.id.nav_news) {
-            mWebview.loadUrl("http://news.irishbloke.net/feeds/simplequery/feed_category_id/0");
-
-        } else if (id == R.id.nav_sport) {
-            //sport
-            mWebview.loadUrl("http://news.irishbloke.net/feeds/simplequery/feed_category_id/2");
+            //mWebview.loadUrl("http://news.irishbloke.net/feeds/simplequery/feed_category_id/0");
+            url=getCategoryURL("news");
         }
+        else if (id == R.id.nav_sport) {
+            //sport
+            //mWebview.loadUrl("http://news.irishbloke.net/feeds/simplequery/feed_category_id/2");
+            url=getCategoryURL("sport");
+        }
+        else if (id == R.id.nav_business) {
+            //sport
+            //mWebview.loadUrl("http://news.irishbloke.net/feeds/simplequery/feed_category_id/2");
+            url=getCategoryURL("business");
+        }
+        else if (id == R.id.nav_worldnews) {
+            //sport
+            //mWebview.loadUrl("http://news.irishbloke.net/feeds/simplequery/feed_category_id/2");
+            url=getCategoryURL("worldnews");
+        }
+        else if (id == R.id.nav_politics) {
+            //sport
+            //mWebview.loadUrl("http://news.irishbloke.net/feeds/simplequery/feed_category_id/2");
+            url=getCategoryURL("politics");
+        }
+
+        mWebview.loadUrl(url);
+
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+    //return the url for the category
+    String getCategoryURL(String sCat){
+        String baseurl="http://news.irishbloke.net/feeds/simplequery/feed_category_id/";
+        String url="";
+
+        if(sCat.equals("news")){
+            url= baseurl+0;
+        }
+        else if (sCat.equals("sport")) {
+            url= baseurl+2;
+        }
+        else if (sCat.equals("entertainment")) {
+            url= baseurl+3;
+        }
+        else if (sCat.equals("business")) {
+            url= baseurl+4;
+        }
+        /*else if (sCat.equals("localevents")) {
+            url= baseurl+5;
+        }*/
+        else if (sCat.equals("worldnews")) {
+            url= baseurl+7;
+        }
+        else if (sCat.equals("politics")) {
+            url= baseurl+8;
+        }
+        return url;
+    }
+
+
 }
